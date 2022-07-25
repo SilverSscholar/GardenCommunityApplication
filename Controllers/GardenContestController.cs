@@ -1,4 +1,5 @@
 ﻿using GardenCommunityApplication.Data;
+using GardenCommunityApplication.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GardenCommunityApplication.Controllers
@@ -12,8 +13,8 @@ namespace GardenCommunityApplication.Controllers
         }
         public IActionResult Index()
         {
-            var gardeningcontest = _context.GardenContests.ToList();
-            return View(gardeningcontest);
+            List<GardenContest> gardencontests = _context.GardenContests.ToList();
+            return View(gardencontests);
         }
     }
 }
