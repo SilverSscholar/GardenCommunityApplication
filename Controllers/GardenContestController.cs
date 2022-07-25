@@ -1,12 +1,19 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using GardenCommunityApplication.Data;
+using Microsoft.AspNetCore.Mvc;
 
 namespace GardenCommunityApplication.Controllers
 {
     public class GardenContestController : Controller
     {
+        private readonly ApplicationDbContext _context;
+        public GardenContestController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
         public IActionResult Index()
         {
-            return View();
+            var gardeningcontest = _context.GardenContests.ToList();
+            return View(gardeningcontest);
         }
     }
 }
