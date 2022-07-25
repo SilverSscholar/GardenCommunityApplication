@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using GardenCommunityApplication.Data.Enum;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GardenCommunityApplication.Models
@@ -13,7 +14,7 @@ namespace GardenCommunityApplication.Models
         [ForeignKey("Address")]
         public int? AddressId { get; set; }
         public Address? Address { get; set; }
-        public ClubCategory ClubCategory { get; set; }
+        public GardeningClubCategory GardeningClubCategory { get; set; }
         [ForeignKey("AppUser")]
         public string? AppUserId { get; set; }
         public AppUser? AppUser { get; set; }

@@ -6,7 +6,8 @@ namespace GardenCommunityApplication.Models
     {
         [Key]
         public int Id { get; set; }
-        public string String { get; set; }
+        
+        public string Street { get; set; }
         public string City { get; set; }
         public string State { get; set; }
     }

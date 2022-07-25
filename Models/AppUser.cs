@@ -5,9 +5,11 @@ namespace GardenCommunityApplication.Models
     public class AppUser
     {
         [Key]
-        public int Id { get; set; }
+        public string Id { get; set; }
         public int? Flowers { get; set; }
         public int? Veggies { get; set; }
         public Address? Address { get; set; }
+        public ICollection<GardeningClub> GardeningClubs { get; set; }
+        public ICollection<GardenContest> GardenContests { get; set; }
     }
 }
