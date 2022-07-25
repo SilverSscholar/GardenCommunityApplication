@@ -1,4 +1,5 @@
 ﻿using GardenCommunityApplication.Data;
+using GardenCommunityApplication.Interfaces;
 using GardenCommunityApplication.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,15 +7,21 @@ namespace GardenCommunityApplication.Controllers
 {
     public class GardeningClubController : Controller
     {
-        private readonly ApplicationDbContext _context;
-        public GardeningClubController(ApplicationDbContext context)
+        
+        private readonly IGardeningClubRepository _gardeningClubRepository;
+        public GardeningClubController( IGardeningClubRepository gardeningClubRepository)
         {
-            _context = context;
+            _gardeningClubRepository = gardeningClubRepository;
         }
-        public IActionResult Index()
+        public async Task <IActionResult> Index()
         {
-            List <GardeningClub> gardeningClubs = _context.GardeningClubs.ToList();
-            return View(gardeningClubs);
+            IEnumerable<GardeningClub> gardeningClub = await _gardeningClubRepository.GetAll();
+            return View(gardeningClub);
+        }
+        public async Task<IActionResult> Detail(int id)
+        {
+            GardeningClub gardeningClub = await _gardeningClubRepository.GetByIdAsync(id);
+            return View(gardeningClub);
         }
     }
 }
