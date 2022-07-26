@@ -24,5 +24,20 @@ namespace GardenCommunityApplication.Controllers
             GardenContest gardenContest = await _gardenContestRepository.GetByIdAsync(id);
             return View(gardenContest);
         }
+        public async Task<IActionResult> Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create(GardenContest gardenContest)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(gardenContest);
+            }
+            _gardenContestRepository.Add(gardenContest);
+            return RedirectToAction("Index");
+
+        }
     }
 }
