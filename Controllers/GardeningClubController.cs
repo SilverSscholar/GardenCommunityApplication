@@ -23,5 +23,22 @@ namespace GardenCommunityApplication.Controllers
             GardeningClub gardeningClub = await _gardeningClubRepository.GetByIdAsync(id);
             return View(gardeningClub);
         }
+
+        public async Task<IActionResult> Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult>Create(GardeningClub gardeningclub)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(gardeningclub);
+            }
+            _gardeningClubRepository.Add(gardeningclub);
+            return RedirectToAction("Index");
+            
+        }
     }
+
 }
