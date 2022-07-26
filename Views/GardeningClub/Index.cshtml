@@ -34,13 +34,13 @@
                <p class="card-text">@item.Description</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a asp-controller="GardenClub" asp-action="Detail"asp-route-id="@item.Id" 
+                  <a asp-controller="GardeningClub" asp-action="Detail"asp-route-id="@item.Id" 
                   class="btn btn-sm btn-outline-secondary">View</a>
-                  <a asp-controller="GardenClub" asp-action="Edit"asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Edit</a>
+                  <a asp-controller="GardeningClub" asp-action="Edit"asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Edit</a>
                 </div>
                 <small class="text-muted">@item.GardeningClubCategory</small>
               </div>
             </div>
-          </div
+          </div>
       </div>
 }

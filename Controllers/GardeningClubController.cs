@@ -15,8 +15,8 @@ namespace GardenCommunityApplication.Controllers
         }
         public async Task <IActionResult> Index()
         {
-            IEnumerable<GardeningClub> gardeningClub = await _gardeningClubRepository.GetAll();
-            return View(gardeningClub);
+            IEnumerable<GardeningClub> gardeningClubs = await _gardeningClubRepository.GetAll();
+            return View(gardeningClubs);
         }
         public async Task<IActionResult> Detail(int id)
         {
