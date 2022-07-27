@@ -9,6 +9,8 @@ namespace GardenCommunityApplication.Controllers
     {
         
         private readonly IGardeningClubRepository _gardeningClubRepository;
+  
+       
         public GardeningClubController( IGardeningClubRepository gardeningClubRepository)
         {
             _gardeningClubRepository = gardeningClubRepository;
@@ -28,8 +30,9 @@ namespace GardenCommunityApplication.Controllers
         {
             return View();
         }
+
         [HttpPost]
-        public async Task<IActionResult>Create(GardeningClub gardeningclub)
+        public async Task<IActionResult> Create(GardeningClub gardeningclub)
         {
             if (!ModelState.IsValid)
             {
@@ -37,7 +40,6 @@ namespace GardenCommunityApplication.Controllers
             }
             _gardeningClubRepository.Add(gardeningclub);
             return RedirectToAction("Index");
-            
         }
     }
 

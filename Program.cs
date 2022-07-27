@@ -1,5 +1,6 @@
 using GardenCommunityApplication.Data;
 using GardenCommunityApplication.Interfaces;
+using GardenCommunityApplication.Models;
 using GardenCommunityApplication.Repository;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +21,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<IGardeningClubRepository, GardeningClubRepository>();
 builder.Services.AddTransient<IGardenContestRepository, GardenContestRepository>();
+
 
 var app = builder.Build();
 
