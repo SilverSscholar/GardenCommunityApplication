@@ -6,17 +6,20 @@
 @{
 }
 
-<<section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Garden Contests</h1>
-        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-        <p>
-          <a href="#" class="btn btn-primary my-2">Main call to action</a>
-          <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-        </p>
-      </div>
+<div class="navbar-container">
     </div>
+    <div class="main-container">
+      <section class="space-sm">
+        <div class="container">
+          <div class="row mb-5">
+            <!--end of col-->
+          </div>
+          <!--end of row-->
+          <div class="row flex-md-row card card-md">
+            <div class="card-body bg-secondary">
+              <div class="text-center mb-5">
+                <h1 class="h2 mb-2">Create your own garden contest, by typing /GardenContest/Create in the Url Bar.</h1>
+                <span>Bring together runners in your community</span>
   </section>
   @foreach(var item in Model)
 {
@@ -35,7 +38,6 @@
                 <div class="btn-group">
                     <a asp-controller="GardenContest" asp-action="Detail"asp-route-id="@item.Id" 
                   class="btn btn-sm btn-outline-secondary">View</a>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                 </div>
                 <small class="text-muted">@item.GardenContestCategory</small>
               </div>

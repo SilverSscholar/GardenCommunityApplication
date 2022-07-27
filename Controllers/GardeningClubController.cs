@@ -7,15 +7,15 @@ namespace GardenCommunityApplication.Controllers
 {
     public class GardeningClubController : Controller
     {
-        
+
         private readonly IGardeningClubRepository _gardeningClubRepository;
-  
-       
-        public GardeningClubController( IGardeningClubRepository gardeningClubRepository)
+
+
+        public GardeningClubController(IGardeningClubRepository gardeningClubRepository)
         {
             _gardeningClubRepository = gardeningClubRepository;
         }
-        public async Task <IActionResult> Index()
+        public async Task<IActionResult> Index()
         {
             IEnumerable<GardeningClub> gardeningClubs = await _gardeningClubRepository.GetAll();
             return View(gardeningClubs);
@@ -41,6 +41,9 @@ namespace GardenCommunityApplication.Controllers
             _gardeningClubRepository.Add(gardeningclub);
             return RedirectToAction("Index");
         }
+       
+
+
     }
 
 }

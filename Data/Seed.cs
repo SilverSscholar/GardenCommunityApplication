@@ -73,7 +73,7 @@ namespace GardenCommunityApplication.Data
                     context.SaveChanges();
                 }
 
-                //Races
+                //Contests
                 if (!context.GardenContests.Any())
                 {
                     context.GardenContests.AddRange(new List<GardenContest>()
